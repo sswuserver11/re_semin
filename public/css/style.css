@@ -287,6 +287,9 @@ input[type=submit]{
     margin:auto;
     display:block;
 }
+.joininputs::placeholder {
+    color:gray;
+}
 #submit_join{
 width:15%;
 margin:auto;

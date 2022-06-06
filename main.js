@@ -3,7 +3,9 @@ const express = require("express"),
     app = express(),
     router = require('express').Router(),
     homeController = require("./controllers/homeController"),
+    filterController = require("./controllers/filterController"),
     memberSubmitController = require("./controllers/memberSubmitController"),
+    loginController = require("./controllers/loginController"),
     // errorController = require("./controllers/errorController"),
     db = require("./models/index"),
         Sequelize = db.Sequelize,
@@ -29,12 +31,14 @@ router.use(express.static(__dirname+"/public"));
 
 router.get("/",homeController.showmain);
 router.get("/detail",homeController.detailpage);
-router.get("/filter",homeController.filterpage);
-router.get("/login",homeController.loginpage);
+//필터링 컨트롤러
+router.get("/filter",filterController.filterpage);
+//로그인 컨트롤러
+router.get("/login",loginController.loginpage);
 //컨트롤러-회원가입
 router.get("/memberSubmit",memberSubmitController.showmemberSubmit);
 router.post("/memberSubmit", memberSubmitController.saveMember);
-//컨트롤러-에러시
+//컨트롤러-에러
 // router.use(errorController.pageNotFoundError);
 // router.use(errorController.internalServerError);
 

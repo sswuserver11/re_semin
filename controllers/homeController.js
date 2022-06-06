@@ -48,14 +48,6 @@ exports.showmain = (req,res) => {
      res.render("index");
  };
 
- exports.filterpage = (req,res) => {
-     res.render("filter");
- };
-
- exports.loginpage = (req,res) => {
-     res.render("crewpass_login");
- };
-
- exports.detailpage = (req,res) => {
+exports.detailpage = (req,res) => {
      res.render("crew_detail");
  };
