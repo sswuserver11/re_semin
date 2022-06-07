@@ -29,8 +29,8 @@ router.use(express.json());
 router.use(layouts);
 router.use(express.static(__dirname+"/public"));
 
-router.get("/",homeController.showmain);
-router.get("/detail",homeController.detailpage);
+router.get("/",homeController.getAllcrewinfo);
+//router.get("/detail",homeController.detailpage);
 //필터링 컨트롤러
 router.get("/filter",filterController.filterpage);
 //로그인 컨트롤러

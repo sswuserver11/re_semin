@@ -34,7 +34,9 @@ let sequelize = new Sequelize(config.database, config.username, config.password,
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.memberinfo = require("./memberinfo.js")(sequelize,Sequelize);//memberinfo모델 불러오기
-// db.crew_info = require("./crew_info.js")(sequelize,Sequelize);
+//memberinfo모델 불러오기
+db.memberinfo = require("./memberinfo.js")(sequelize,Sequelize);
+//crew_info모델 불러오기
+db.crew_info = require("./crew_info.js")(sequelize,Sequelize);
 
 module.exports = db;
