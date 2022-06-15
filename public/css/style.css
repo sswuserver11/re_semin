@@ -91,22 +91,6 @@ main {
     font-weight: 600;
 }
 
-/* 인기모집동아리 css */
-table{
-    width: 1000px;
-    border-collapse: collapse;  
-}
-
-.top__table {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width:400px;
-}
-
-.tabtitle{
-    background-color: rgb(153, 151, 151);
-}
-
 /* 동아리 모집글 css */
 .crew__header{
     padding-top: 25px;

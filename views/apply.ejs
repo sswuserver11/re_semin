@@ -6,6 +6,31 @@
             <meta name="viewport" content="width=device-width", initial-scale="1.0">
             <title><%= crew_info.crew_name %></title>
             <style>
+                .header{
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    justify-content: space-between;
+                    margin: 20px 0 0 15px;
+                    border-bottom: 4px solid #6BB9ED;
+                }
+                .logo {
+                    border: 0;
+                    background-color: white;
+                    cursor: pointer;
+                }
+                .login {
+                    display: grid;
+                    grid-template-columns: auto auto;
+                    grid-column-gap: 30px;
+                    list-style-type: none;
+                    margin-right: 20px;
+                }
+
+                .login a{
+                    text-decoration: none;
+                    color: black;
+                    font-weight: 800;
+                }               
                 .table{
                     width:35%;
                     margin: 0 auto;
@@ -82,31 +107,31 @@
                 <tr>
                     <td>
                         <p> <%= crew_info.application_question_1 %> </p>
-                        <input class="answers" type="text" name="application_ans1"  class="apply_ans">
+                        <p><textarea class="answers" name="application_ans1"  class="apply_ans"></textarea></p>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <p> <%= crew_info.application_question_2 %> </p>
-                        <input class="answers" type="text"  name="application_ans2"class="apply_ans">
+                        <p><textarea class="answers" name="application_ans2"  class="apply_ans"></textarea></p>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <p> <%= crew_info.application_question_3 %> </p>
-                        <input class="answers" type="text" name="application_ans3"  class="apply_ans">
+                        <p><textarea class="answers" name="application_ans3"  class="apply_ans"></textarea></p>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <p> <%= crew_info.application_question_4 %> </p>
-                        <input class="answers" type="text" name="application_ans4" class="apply_ans">
+                        <p><textarea class="answers" name="application_ans4"  class="apply_ans"></textarea></p>
                 </td>
                 </tr>
                 <tr>
                     <td>
                         <p> <%= crew_info.application_question_5 %> </p>
-                        <input class="answers" type="text" name="application_ans5" class="apply_ans">
+                        <p><textarea class="answers" name="application_ans5"  class="apply_ans"></textarea></p>
                     </td>
                 </tr>
                 <br>

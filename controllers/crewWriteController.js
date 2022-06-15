@@ -18,7 +18,7 @@ exports.saveCrewRecruit=async(req,res)=>{
             detail_info:req.body.detail_info,
             recruit_end:req.body.recruit_end
         });
-        res.render("index"); //동아리 등록 버튼을 클릭하여 저장 후 뜨는 사이트: views 폴더 안에 있는 ejs 파일이어야만 연동된다.
+        res.redirect("../index"); //동아리 등록 버튼을 클릭하여 저장 후 뜨는 사이트: views 폴더 안에 있는 ejs 파일이어야만 연동된다.
     }catch(err){
         res.status(500).send({
             message:err.message
