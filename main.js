@@ -10,6 +10,7 @@ const express = require("express"),
     memberLoginController = require("./controllers/memberLoginController"),
     readCrewController = require("./controllers/readCrewController"),
     applyController = require("./controllers/applyController"),
+    myPageController = require("./controllers/myPageController"),
     // errorController = require("./controllers/errorController"),
     db = require("./models/index"),
         Sequelize = db.Sequelize,
@@ -71,9 +72,12 @@ router.post("/memberSubmit", memberSubmitController.saveMember);
 //컨트롤러-로그인
 router.get("/login", memberLoginController.loginpage);
 router.post("/login", memberLoginController.authenticate);
-
+//컨트롤러-마이페이지 등록
+app.get("/myPage",myPageController.showMyPage);
+//컨트롤러-마이페이지 with param
+app.get("/myPage/:email",myPageController.showMyPage);
 //회원 로그인 성공했을 때 이동하는 곳
-router.get("/index/:email",homeController.getAllcrewinfo);
+router.get("/:email",homeController.getAllcrewinfo);
 //홈화면에서 동아리모집글 상세보기
 router.get("/readCrew/:identify_numb_manager", readCrewController.showreadCrew);
 //router.get("/apply",applyController.showApply);
@@ -81,6 +85,7 @@ router.get("/readCrew/:identify_numb_manager", readCrewController.showreadCrew);
 //지원하기
 router.get("/apply/:identify_numb_manager",applyController.showApply);
 router.post("/apply/:identify_numb_manager",applyController.submit_application);
+
 
 
 //컨트롤러-에러

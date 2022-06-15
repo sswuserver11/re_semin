@@ -2,7 +2,7 @@
 const passportLocalSequelize = require("passport-local-sequelize");
 
 module.exports=(sequelize, Sequelize)=>{
-    const Member=sequelize.define("memberinfo",{
+    const Memberinfo=sequelize.define("memberinfo",{
         email:{
             type:Sequelize.STRING(40),
             primaryKey:true
@@ -36,5 +36,5 @@ module.exports=(sequelize, Sequelize)=>{
     //     hashField: 'password',
     //     saltField:'mysalt'
     // });
-    return Member;
+    return Memberinfo;
 };
