@@ -10,6 +10,7 @@ exports.showMyPage = async (req, res) => {
                     where: { email : req.params.email}
                 });
                 res.locals.data = data;
+                res.render("myPage",{memberinfo:data});
         }catch(err) {
                 res.status(500).send({
                         message: err.message

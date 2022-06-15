@@ -76,8 +76,6 @@ router.post("/login", memberLoginController.authenticate);
 app.get("/myPage",myPageController.showMyPage);
 //컨트롤러-마이페이지 with param
 app.get("/myPage/:email",myPageController.showMyPage);
-//회원 로그인 성공했을 때 이동하는 곳
-router.get("/:email",homeController.getAllcrewinfo);
 //홈화면에서 동아리모집글 상세보기
 router.get("/readCrew/:identify_numb_manager", readCrewController.showreadCrew);
 //router.get("/apply",applyController.showApply);
