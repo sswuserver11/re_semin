@@ -1,0 +1,20 @@
+<section>
+    <div class="top__table"></div>
+        <table border="1">
+            <thead class="tabtitle">
+                <td>num</td>
+                <td>동아리모집글명</td>
+            </thead>
+            <tbody>
+                <% num = 1; %>
+                <% crewrecruit.forEach(crewrecruit_detail => { %>
+                    <tr>
+                        <td><%= num %></td>
+                        <td><%= crewrecruit_detail.title %></td>
+                    <% num +=1; %>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</section>

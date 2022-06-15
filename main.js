@@ -11,6 +11,11 @@ const express = require("express"),
     readCrewController = require("./controllers/readCrewController"),
     applyController = require("./controllers/applyController"),
     myPageController = require("./controllers/myPageController"),
+    crewLoginController = require("./controllers/crewLoginController"),
+    crewWriteController = require("./controllers/crewWriteController"),
+    crewSubmitController = require("./controllers/crewSubmitController"),
+    crewrecruitLoginController=require("./controllers/crewrecruitLoginController"),
+    crewrecruitListController = require("./controllers/crewrecruitListController"),
     // errorController = require("./controllers/errorController"),
     db = require("./models/index"),
         Sequelize = db.Sequelize,
@@ -69,13 +74,30 @@ router.get("/filter",filterController.filterpage);
 //컨트롤러-회원가입
 router.get("/memberSubmit",memberSubmitController.showmemberSubmit);
 router.post("/memberSubmit", memberSubmitController.saveMember);
+//컨트롤러-동아리 가입
+router.get("/crewSubmit", crewSubmitController.showcrewSubmit);
+router.post("/crewSubmit", crewSubmitController.saveCrew); //crewSubmit.ejs의 form에서 보낸 POST에 대한 답변 실행
 //컨트롤러-로그인
 router.get("/login", memberLoginController.loginpage);
 router.post("/login", memberLoginController.authenticate);
+//컨트롤러-동아리 모집글 보기 로그인
+router.get("/crewrecruitLogin", crewrecruitLoginController.showcrewLogin);
+router.post("/crewrecruitLogin", crewrecruitLoginController.authenticate);
+//컨트롤러-동아리로그인
+router.get("/crewLogin", crewLoginController.showcrewLogin);
+router.post("/crewLogin", crewLoginController.authenticate);
 //컨트롤러-마이페이지 등록
-app.get("/myPage",myPageController.showMyPage);
+router.get("/myPage",myPageController.showMyPage);
+//컨트롤러-동아리 모집글 등록
+router.get("/crewWrite", crewWriteController.showcrewWrite);
+router.post("/crewWrite", crewWriteController.saveCrewRecruit); //crewSubmit.ejs의 form에서 보낸 POST에 대한 답변 실행
+//컨트롤러-마이페이지-동아리 모집글 목록 보기
+router.get("/crewrecruitList/:identify_numb_manager",crewrecruitListController.showcrewrecruitList);
 //컨트롤러-마이페이지 with param
-app.get("/myPage/:email",myPageController.showMyPage);
+router.get("/myPage/:email",myPageController.showMyPage);
+//동아리 모집글을 작성하는 페이지
+router.get("/crewWrite/:identify_numb_manager", crewWriteController.showcrewWrite);
+router.post("/crewWrite/:identify_numb_manager", crewWriteController.saveCrewRecruit); //crewSubmit.ejs의 form에서 보낸 POST에 대한 답변 실행
 //홈화면에서 동아리모집글 상세보기
 router.get("/readCrew/:identify_numb_manager", readCrewController.showreadCrew);
 //router.get("/apply",applyController.showApply);
