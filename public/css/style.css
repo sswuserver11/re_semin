@@ -1,5 +1,5 @@
 /* 메인페이지시작(index.html) */
-nav{
+.header{
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
@@ -43,29 +43,38 @@ nav{
     font-weight: 800;
 }
 
-
 /* 검색창 css */
 .searching {
-    width:100%;
     text-align: center;
-    margin: 10px;
     padding-bottom: 20px;
 }
-
-.search__crew {
-    height: 45px;
-    width: 500px;
-    border: 2px solid rgb(230,227,227);
+/* 상,우,하,좌 */
+.search1{
+    display:inline-block;
 }
 
-.search__bar button {
-    /* background-color: aqua; */
+.search2{
+    display:inline-block;
+}
+
+.search__bar{
+    height: 45px;
+    width: 500px;
+}
+
+.search__bar::placeholder {
+    color:gray;
+}
+
+.search__button {
+    width: 50px;
     height: 40px;
     font-size: 15px;
     border-radius: 6px;
     cursor: pointer;
     border: 2px solid rgb(230,227,227);
 }
+
 /* main부분(인기모집동아리,동아리모집글부분) */
 main {
     margin: 30px 80px; /*세로 가로*/
@@ -143,16 +152,17 @@ table{
     font-size:30px;
 }
 
-.crew__like{
+.crew__region{
     margin:10px 0 10px 0;
     font-size:20px;
     color: grey;
 }
 
 .watch__crew{
-    display: grid;
+    text-align: center;
+    /* display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 .btn-group{
@@ -263,7 +273,7 @@ input[type=submit]{
     margin-top:100px;
 }
 #forgot{
-    text-align: right;
+    text-align: center;
     font-size:12pt;
     color:rgb(164, 164, 164);
     margin:10px 0px;
@@ -307,3 +317,8 @@ display:block;
     margin-left:5%;
     margin-right:5%;
 }
+
+/*모집글상세보기 신버전*/
+
+
+            

@@ -1,5 +1,6 @@
 const db = require("../models/index");//다 가져와서
 Crew = db.crew_info;//db등록
+memberInfo = db.memberinfo;
 Op = db.Sequelize.Op;
 
 exports.getAllcrewinfo = async (req,res) => {
@@ -14,10 +15,6 @@ exports.getAllcrewinfo = async (req,res) => {
     }
 };
 
-// exports.showmain = (req,res) => {
-//      res.render("index");
-//  };
 
-// exports.detailpage = (req,res) => {
-//      res.render("crew_detail");
-//  };
+
+

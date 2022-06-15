@@ -38,5 +38,7 @@ db.Sequelize = Sequelize;
 db.memberinfo = require("./memberinfo.js")(sequelize,Sequelize);
 //crew_info모델 불러오기
 db.crew_info = require("./crew_info.js")(sequelize,Sequelize);
+db.crewrecruit_detail=require("./crewrecruit_detail.js")(sequelize,Sequelize);
+db.application=require("./application.js")(sequelize,Sequelize);
 
 module.exports = db;

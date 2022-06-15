@@ -1,0 +1,90 @@
+<main>
+    <section>
+        <!DOCTYPE html>
+        <html lang="ko">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width", initial-scale="1.0">
+            <title><%= crew_info.crew_name %></title>
+            <style>
+                tr{
+                    height: 60px;    	
+                }    	
+                .totalTable{
+                    width:35%;
+                    margin: 0 auto;
+                    border: hidden;
+                }
+                .crewname{
+                    width:40%;
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+                .region{
+                    width:30%;
+                    width:30%;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color:rgb(122, 121, 121);   		
+                }
+                .field{
+                    width:30%;
+                    font-size: 20px;
+                    font-weight: bold;
+                    color:rgb(122, 121, 121);   		
+                }
+                .title{
+                    font-size: 25px;
+                    font-weight: bold;
+                    text-align:center;
+                    color:blue;
+                }
+                .apply{
+                    width:10%;
+                    margin:auto;
+                    display:block;
+                }
+            </style>
+        </head>
+        <body>
+            <table class="totalTable">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="crewname">
+                            <%= crew_info.crew_name %>
+                        </td>
+                        <td class="region">
+                            #<%= crew_info.region %>
+                        </td>
+                        <td class="field">
+                            #<%= crew_info.field %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="title">
+                            <%= crewrecruit_detail.title %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            마감일:  <%= crewrecruit_detail.recruit_end %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <%= crewrecruit_detail.detail_info %>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <a href="/apply/<%= crew_info.identify_numb_manager %>">지원하기</a>
+            <br>
+            <br>
+        </body>
+        </html>
+    </section>     
+</main>
+   

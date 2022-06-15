@@ -5,7 +5,7 @@ exports.showmemberSubmit=(req,res)=>{
     res.render("memberSubmit");
 };
 
-//crewSubmit.ejs에서 동아리 등록 버튼을 눌렀을 때, 입력 받은 정보들을 저장
+//memberSubmit.ejs에서 회원가입 버튼을 눌렀을 때, 입력 받은 정보들을 저장
 exports.saveMember=async(req,res)=>{
     try{
         await Member.create({
@@ -16,7 +16,7 @@ exports.saveMember=async(req,res)=>{
             birth:req.body.birth,
             phone_numb:req.body.phone_numb
         });
-        res.render("memberSubmit"); //동아리 등록 버튼을 클릭하여 저장 후 뜨는 사이트: views 폴더 안에 있는 ejs 파일이어야만 연동된다.
+        res.render("memberSubmit"); //회원가입 버튼을 클릭하여 저장 후 뜨는 사이트: views 폴더 안에 있는 ejs 파일이어야만 연동된다.
     }catch(err){
         res.status(500).send({
             message:err.message

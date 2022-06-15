@@ -11,14 +11,11 @@
     <body>
         <header>
             <!-- 로고 및 로그인부분 -->
-            <nav>
+            <div class="header">
                 <button type="button" class="logo" onclick="location.href='http://localhost/'"> <img src="/img/logo.JPG" width="200" height="60"></button> 
                 <!-- 로그인세션유지if else문 삽입 -->
                 <%- include('logoutsession') %>
-                <!-- <span class="login">
-                    <a href="#">로그인</a>
-                </span> -->
-            </nav>
+            </div>
         </header>
         <%- body %>
     </body>

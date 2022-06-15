@@ -2,119 +2,34 @@
     <!-- 검색창부분 -->
     <section>
         <div class="searching">
-            <div class="search__bar">
-                <input class="search__crew" type="search" placeholder="찾는 동아리를 입력하세요">
-                <button>검색</button>
-            </div>
+            <!-- <div class="search_section"> -->
+            <form class="search__crew" action="/index" method="GET">
+                <div class="search1"><input class="search__bar" type="text" placeholder="찾는 동아리를 입력하세요"></div>
+                <div class="search2"><input class="search__button" type="submit" value="검색"></div>
+            </form>
+            <!-- </div> -->
         </div>
     </section>
     <hr>
-    <!-- 인기모집동아리 10개순위리스트 -->
-    <section>
-        <div class="top__title">인기모집 동아리</div>
-        <div class="top__subtitle">동아리원으로부터 검증된 좋아요수로 인기동아리를 알아보세요!</div>
-        <div class="top__table">
-            <!-- 추후 변수만들어 동적으로 변경되도록 수정 -->
-            <table border="1">
-                <thead class="tabtitle">
-                    <td>순위</td>
-                    <td>동아리명</td>
-                    <td>좋아요수</td>
-                </thead>
-                <tbody>
-                    <% num = 1; %>
-                    <% crewinfo.forEach(crew_info => { %>
-                    <tr>
-                        <td><%= num %></td>
-                        <td><%= crew_info.crew_name %></td>
-                        <td></td>
-                        <% num +=1; %>
-                    </tr>
-                    <% }); %>
-                </tbody>
-            </table>
-        </div>
-    </section>
-    <hr>
-    <!-- 동아리 모집글 보이는 부분(여기도 동적으로 수정해야함) -->
     <section>
         <div class="crew__header">
             <div class="crew__title">전체</div>
             <button onclick="window.open('http://localhost/filter')" class="filter">필터링</button>
         </div>
         <div class="crew__box">
+            <% crewinfo.forEach(crew_info => { %>
             <div class="crewpost">
                 <div class="crew__info">
-                    <div class="crew__name">oo동아리</div>
-                    <div class="crew__like">#문화/예술 #비대면 #전국</div>
+                    <div class="crew__name"><%= crew_info.crew_name %></div>
+                    <div class="crew__region">#<%= crew_info.region %> #<%= crew_info.field %> </div>
                     <div class="watch__crew">
-                        <button>상세보기</button>
-                        <button>좋아요</button>
+                        <a href="readCrew/<%= crew_info.identify_numb_manager %>">상세보기</a> 
                     </div>
                 </div>
             </div>
-            <div class="crewpost">
-                <div class="crew__info">
-                    <div class="crew__name">oo동아리</div>
-                    <div class="crew__like">#문화/예술 #비대면 #전국</div>
-                    <div class="watch__crew">
-                        <button onclick="location.href='http://localhost/join'">상세보기</button>
-                        <button>좋아요</button>
-                    </div>
-                </div>
-            </div>
-            <div class="crewpost">
-                <div class="crew__info">
-                    <div class="crew__name">oo동아리</div>
-                    <div class="crew__like">#문화/예술 #비대면 #전국</div>
-                    <div class="watch__crew">
-                        <button>상세보기</button>
-                        <button>좋아요</button>
-                    </div>
-                </div>
-            </div>
-            <div class="crewpost">
-                <div class="crew__info">
-                    <div class="crew__name">oo동아리</div>
-                    <div class="crew__like">#문화/예술 #비대면 #전국</div>
-                    <div class="watch__crew">
-                        <button>상세보기</button>
-                        <button>좋아요</button>
-                    </div>
-                </div>
-            </div>
-            <div class="crewpost">
-                <div class="crew__info">
-                    <div class="crew__name">oo동아리</div>
-                    <div class="crew__like">#문화/예술 #비대면 #전국</div>
-                    <div class="watch__crew">
-                        <button>상세보기</button>
-                        <button>좋아요</button>
-                    </div>
-                </div>
-            </div>
-            <div class="crewpost">
-                <div class="crew__info">
-                    <div class="crew__name">oo동아리</div>
-                    <div class="crew__like">#문화/예술 #비대면 #전국</div>
-                    <div class="watch__crew">
-                        <button>상세보기</button>
-                        <button>좋아요</button>
-                    </div>
-                </div>
-            </div>
+            <% }); %>
         </div>
     </section>
-    <section>
-    <!-- 페이지 넘기기(여기도 동적수정) -->
-    <div class="btn-group">
-        <button type="button"><</button>
-        <button type="button">1</button>
-        <button type="button">2</button>
-        <button type="button">3</button>
-        <button type="button">4</button>
-        <button type="button">></button>
-    </div>
-    </section>
+    
 </main>
 
