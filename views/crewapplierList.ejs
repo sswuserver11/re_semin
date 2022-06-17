@@ -51,14 +51,14 @@
                 <table border="1">
                     <thead class="tabtitle">
                         <td>num</td>
-                        <td>동아리 모집글명</td>
+                        <td>지원자</td>
                     </thead>
                     <tbody>
                         <% num = 1; %>
-                        <% crewrecruit_detail.forEach(crewrecruit_detail => { %>
+                        <% Application.forEach(Application => { %>
                             <tr>
                                 <td><%= num %></td>
-                                <td><a href="/readCrew/<%=crewrecruit_detail.identify_numb_manager %>"><%= crewrecruit_detail.title %></a></td>
+                                <td><%= Application.email %></a></td>
                                 <% num +=1; %>
                             </tr>
                         <% }); %>

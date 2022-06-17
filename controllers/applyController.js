@@ -2,6 +2,7 @@ const db = require("../models/index"),
         Crew = db.crew_info,
         application = db.application;
 
+//동아리 지원지 지원항목 질문 보여주기
 exports.showApply = async (req, res) => {
         try {
                 identify_numb_manager=req.params.identify_numb_manager;
@@ -17,7 +18,7 @@ exports.showApply = async (req, res) => {
         }
 
 };
-
+//동아리 지원하기
 exports.submit_application = async (req, res) => {
         try{
             var supporter_numb = Math.random()*99999;
